@@ -100,6 +100,17 @@ extern CoreData CORE;                   // Global CORE state context
 
 static PlatformData platform = { 0 };   // Platform specific data
 
+// TODO(calco): not sure where to put this!
+
+// opaque thing just for ref purposes
+GLFWwindow* CALCO_IMPL_getGlfwContext() {
+    return glfwGetCurrentContext();
+}
+
+void CALCO_IMPL_setGlfwContext(GLFWwindow* context) {
+    return glfwMakeContextCurrent(context);
+}
+
 //----------------------------------------------------------------------------------
 // Module Internal Functions Declaration
 //----------------------------------------------------------------------------------

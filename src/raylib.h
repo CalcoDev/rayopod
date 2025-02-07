@@ -969,6 +969,11 @@ typedef bool (*SaveFileTextCallback)(const char *fileName, char *text); // FileI
 extern "C" {            // Prevents name mangling of functions
 #endif
 
+// Calcopod Functions
+typedef struct CALCO_GLFWwindow CALCO_GLFWwindow;
+RLAPI CALCO_GLFWwindow* CALCO_getGlfwContext();
+RLAPI void CALCO_setGlfwContext(CALCO_GLFWwindow* context);
+
 // Window-related functions
 RLAPI void InitWindow(int width, int height, const char *title);  // Initialize window and OpenGL context
 RLAPI void CloseWindow(void);                                     // Close window and unload OpenGL context

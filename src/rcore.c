@@ -567,6 +567,23 @@ const char *TextFormat(const char *text, ...);              // Formatting of tex
 // Module Functions Definition: Window and Graphics Device
 //----------------------------------------------------------------------------------
 
+// TODO(calco): I haven't the faintest idea where to put this code, so I'll put it here :moai:
+RLAPI CALCO_GLFWwindow* CALCO_getGlfwContext() {
+#if defined(PLATFORM_DESKTOP_GLFW)
+    return (CALCO_GLFWwindow*) CALCO_IMPL_getGlfwContext();
+#endif
+    printf("BIG FRICKING ERROR LMFAO. CALCOPOD DIDNT IMPLEMENT THIS!!!! PM HIM ON DISC OR STH !!!!");
+    return NULL;
+}
+
+RLAPI void CALCO_setGlfwContext(CALCO_GLFWwindow* context) {
+#if defined(PLATFORM_DESKTOP_GLFW)
+    CALCO_IMPL_setGlfwContext(context);
+    return;
+#endif
+    printf("BIG FRICKING ERROR LMFAO. CALCOPOD DIDNT IMPLEMENT THIS!!!! PM HIM ON DISC OR STH !!!!");
+}
+
 // NOTE: Functions with a platform-specific implementation on rcore_<platform>.c
 //bool WindowShouldClose(void)
 //void ToggleFullscreen(void)
